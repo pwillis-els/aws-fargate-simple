@@ -1,4 +1,4 @@
-resource "aws_iam_role" "tfer--bastion-002D-execution-002D-role" {
+resource "aws_iam_role" "tfer--fargate-002D-execution-002D-role" {
   assume_role_policy = <<POLICY
 {
   "Statement": [
@@ -16,11 +16,11 @@ resource "aws_iam_role" "tfer--bastion-002D-execution-002D-role" {
 POLICY
 
   max_session_duration = "3600"
-  name                 = "bastion-execution-role"
+  name                 = "fargate-execution-role"
   path                 = "/"
 }
 
-resource "aws_iam_role" "tfer--bastion-002D-task-002D-role" {
+resource "aws_iam_role" "tfer--fargate-002D-task-002D-role" {
   assume_role_policy = <<POLICY
 {
   "Statement": [
@@ -38,7 +38,7 @@ resource "aws_iam_role" "tfer--bastion-002D-task-002D-role" {
 POLICY
 
   max_session_duration = "3600"
-  name                 = "bastion-task-role"
+  name                 = "fargate-task-role"
   path                 = "/"
 }
 

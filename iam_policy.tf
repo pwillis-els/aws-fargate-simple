@@ -1,6 +1,6 @@
-resource "aws_iam_policy" "tfer--bastion_ecr_get_policy" {
-  description = "A policy to allow the bastion instance profile to pull ECR repositories"
-  name        = "bastion_execution_policy"
+resource "aws_iam_policy" "tfer--fargate_ecr_get_policy" {
+  description = "A policy to allow the fargate container to pull ECR repositories and create CloudWatch logs"
+  name        = "fargate_execution_policy"
   path        = "/"
 
   policy = <<POLICY
@@ -26,9 +26,9 @@ resource "aws_iam_policy" "tfer--bastion_ecr_get_policy" {
 POLICY
 }
 
-resource "aws_iam_policy" "tfer--bastion_task_access" {
-  description = "A policy to allow the bastion instance profile to pull ECR repositories"
-  name        = "bastion_task_policy"
+resource "aws_iam_policy" "tfer--fargate_task_access" {
+  description = "A policy to allow the fargate task to perform AWS API actions at run time"
+  name        = "fargate_task_policy"
   path        = "/"
 
   policy = <<POLICY

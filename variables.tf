@@ -23,8 +23,8 @@ variable "aws_account_id" {
 }
 
 variable "ecr_container" {
-  description = "The name:tag of a container to deploy to ECR (that will be our bastion service)"
-  default = "bastion-container:latest"
+  description = "The name:tag of a container to deploy to ECR (that will be our fargate service)"
+  default = "fargate-container:latest"
 }
 
 variable "container_image" {
@@ -60,6 +60,6 @@ variable "container_taskdef" {
 
 variable "cluster_name" {
   description = "The name for the Fargate cluster"
-  default = "bastion-cluster"
+  default = "fargate-cluster"
 }
 

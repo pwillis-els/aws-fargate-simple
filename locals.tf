@@ -1,7 +1,7 @@
 locals {
-    security_groups = length(var.security_groups) > 0 ? var.security_groups : [ aws_security_group.bastion_tasks.id ]
+    security_groups = length(var.security_groups) > 0 ? var.security_groups : [ aws_security_group.fargate_tasks.id ]
 
-    cluster_name = "bastion-cluster"
+    cluster_name = "fargate-cluster"
 
     # Default to an ECR image
     container_image = length(var.container_image) > 0 ? var.container_image : "${var.aws_account_id}.dkr.ecr.${var.region}.amazonaws.com/${var.ecr_container}"
@@ -17,12 +17,12 @@ locals {
         "logConfiguration": {
             "logDriver": "awslogs",
             "options": {
-                "awslogs-group": "${aws_cloudwatch_log_group.bastion_log_group.name}",
+                "awslogs-group": "${aws_cloudwatch_log_group.fargate_log_group.name}",
                 "awslogs-region": "${var.region}",
                 "awslogs-stream-prefix": "ecs"
             }
         },
-        "name": "bastion-container",
+        "name": "fargate-container",
         "portMappings": [
             {
                 "containerPort": ${var.container_port},

@@ -1,5 +1,5 @@
-resource "aws_security_group" "bastion_tasks" {
-  name   = "bastion-task-access"
+resource "aws_security_group" "fargate_tasks" {
+  name   = "fargate-task-access"
   vpc_id = var.vpc_id
 
   ingress {

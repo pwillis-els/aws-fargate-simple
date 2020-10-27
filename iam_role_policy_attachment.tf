@@ -1,6 +1,6 @@
-resource "aws_iam_role_policy_attachment" "tfer--bastion-002D-execution-002D-role_bastion_ecr_get_policy" {
-  policy_arn = aws_iam_policy.tfer--bastion_ecr_get_policy.arn
-  role       = aws_iam_role.tfer--bastion-002D-execution-002D-role.name
+resource "aws_iam_role_policy_attachment" "tfer--fargate-002D-execution-002D-role_fargate_ecr_get_policy" {
+  policy_arn = aws_iam_policy.tfer--fargate_ecr_get_policy.arn
+  role       = aws_iam_role.tfer--fargate-002D-execution-002D-role.name
 }
 
 #resource "aws_iam_role_policy_attachment" "ecs-task-execution-role-policy-attachment" {
@@ -9,8 +9,8 @@ resource "aws_iam_role_policy_attachment" "tfer--bastion-002D-execution-002D-rol
 #}
 
 
-resource "aws_iam_role_policy_attachment" "tfer--bastion-002D-task-002D-role_bastion_task_access" {
-  policy_arn = aws_iam_policy.tfer--bastion_ecr_get_policy.arn
-  role       = aws_iam_role.tfer--bastion-002D-task-002D-role.name
+resource "aws_iam_role_policy_attachment" "tfer--fargate-002D-task-002D-role_fargate_task_access" {
+  policy_arn = aws_iam_policy.tfer--fargate_ecr_get_policy.arn
+  role       = aws_iam_role.tfer--fargate-002D-task-002D-role.name
 }
 

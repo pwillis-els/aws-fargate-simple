@@ -1,4 +1,4 @@
-resource "aws_ecr_repository" "tfer--bastion-002D-container" {
+resource "aws_ecr_repository" "tfer--fargate-002D-container" {
   encryption_configuration {
     encryption_type = "AES256"
   }
@@ -8,5 +8,5 @@ resource "aws_ecr_repository" "tfer--bastion-002D-container" {
   }
 
   image_tag_mutability = "MUTABLE"
-  name                 = "bastion-container"
+  name                 = "fargate-container"
 }
